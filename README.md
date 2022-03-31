@@ -15,7 +15,7 @@ find a rectangle (two dimensional sub-array) whose sum is maximum.
 make && make jar
 
 ## Run Commands
-Example: ''java -jar MarsBase.jar 4 < input2.txt''
+Example: java -jar MarsBase.jar 4 < input2.txt
 
 
 ## Algorithm Design Tasks

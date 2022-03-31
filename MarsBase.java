@@ -21,7 +21,7 @@ public class MarsBase {
         s.add(task5);
         s.add(task6);
 
-        if (args.length == 0) {
+        if (args.length != 1) {
             System.out.println("No Input Given Exiting .... !!");
             System.exit(-1);
         }
@@ -32,14 +32,28 @@ public class MarsBase {
             System.out.println("Invalid input. Exiting .... !!");
             System.exit(-1);
         }
+
         Problem p = null;
         switch (task) {
             case task1:
                 p = new Task1();
                 break;
+            case task2:
+                p = new Task2();
+                break;
+            case task3a:
+                p = new Task3a();
+                break;
+            case task3b:
+                p = new Task3b();
+                break;
             case task4:
                 p = new Task4();
                 break;
+            case task5:
+                p = new Task4();
+                break;
+            case task6:
             default:
                 System.out.println("Tata.. Bye Bye..Khatam..!!");
                 System.exit(-1);
@@ -47,18 +61,20 @@ public class MarsBase {
 
         p.getInput();
         p.solve();
+        p.displayResult();
     }
 }
 
 interface Problem {
     void getInput();
-
     void solve();
+    void displayResult();
 }
 
 abstract class Problem1 implements Problem {
     public int[] arr;
     Scanner scanner = new Scanner(System.in);
+    int l=0,r=0,sum=0;
 
     public void getInput() {
         int n = scanner.nextInt();
@@ -71,6 +87,10 @@ abstract class Problem1 implements Problem {
     }
 
     public abstract void solve();
+
+    public void displayResult(){
+        System.out.println(String.format("%d %d %d",l,r,sum));
+    }
 }
 
 class Task1 extends Problem1 {
@@ -115,6 +135,7 @@ class Task3b extends Problem1 {
 
 abstract class Problem2 implements Problem {
     public int[][] mat;
+    int x1,y1,x2,y2,sum;
     Scanner scanner = new Scanner(System.in);
 
     public void getInput() {
@@ -135,6 +156,11 @@ abstract class Problem2 implements Problem {
     }
 
     public abstract void solve();
+    
+    public void displayResult(){
+        System.out.println(String.format("%d %d %d %d %d",x1,y1,x2,y2,sum));
+    }
+
 }
 
 class Task4 extends Problem2 {

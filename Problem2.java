@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
 public abstract class Problem2 implements Problem {
-    public int[][] mat;
+    public int msize, nsize;
+    public int[][] matAQI;
     int x1,y1,x2,y2,sum;
     Scanner scanner = new Scanner(System.in);
 
     public void getInput() {
-        int m = scanner.nextInt();
-        int n = scanner.nextInt();
-        mat = new int[m][n];
+        msize = scanner.nextInt();
+        nsize = scanner.nextInt();
+        matAQI = new int[msize][nsize];
         int rowcount = 0;
         int colcount = 0;
 
-        while (rowcount < m) {
-            while (colcount < n) {
-                mat[rowcount][colcount++] = scanner.nextInt();
+        while (rowcount < msize) {
+            while (colcount < nsize) {
+                matAQI[rowcount][colcount++] = scanner.nextInt();
             }
             colcount = 0;
             rowcount++;

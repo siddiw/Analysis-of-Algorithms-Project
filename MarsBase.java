@@ -60,8 +60,11 @@ public class MarsBase {
         }
 
         p.getInput();
+        long startTime = System.currentTimeMillis();
         p.solve();
+        long endTime = System.currentTimeMillis();
         p.displayResult();
+        System.out.println(endTime-startTime);
     }
 }
 
@@ -133,6 +136,7 @@ class Task3b extends Problem1 {
     }
 }
 
+
 abstract class Problem2 implements Problem {
     public int[][] mat;
     int x1,y1,x2,y2,sum;
@@ -156,7 +160,7 @@ abstract class Problem2 implements Problem {
     }
 
     public abstract void solve();
-    
+
     public void displayResult(){
         System.out.println(String.format("%d %d %d %d %d",x1,y1,x2,y2,sum));
     }

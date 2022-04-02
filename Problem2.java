@@ -3,7 +3,7 @@ import java.util.Scanner;
 public abstract class Problem2 implements Problem {
     public int msize, nsize;
     public int[][] matAQI;
-    int x1,y1,x2,y2,sum;
+    int x1 = -1, y1 = -1, x2 = -1, y2 = -1, sum;
     Scanner scanner = new Scanner(System.in);
 
     public void getInput() {

@@ -1,7 +1,7 @@
 public class Task1 extends Problem1 {
     @Override
     public void solve() {
-        int maxSumSoFar = 0;
+        int maxSumSoFar = Integer.MIN_VALUE;
 
         // left - left pointer
         for (int left = 0; left < nsize; left++) {

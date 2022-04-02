@@ -1,6 +1,6 @@
 class Task4 extends Problem2 {
     public void solve() {
-        int maxSumSoFar = 0;
+        int maxSumSoFar = Integer.MIN_VALUE;
 
         // r1 - x coordinate for top left
         for (int r1 = 0; r1 < msize; r1++) {

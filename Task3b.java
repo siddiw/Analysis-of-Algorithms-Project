@@ -1,7 +1,7 @@
 public class Task3b extends Problem1 {
     @Override
     public void solve() {
-        int maxSumSoFar = 0;
+        int maxSumSoFar = Integer.MIN_VALUE;
         int currSum = 0, currStart = 0;
 
         for (int currPtr = 0; currPtr < nsize; currPtr++) {

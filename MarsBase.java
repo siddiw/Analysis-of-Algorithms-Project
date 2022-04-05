@@ -47,15 +47,15 @@ public class MarsBase {
 
         p.getInput();
 
-        long startTime = System.nanoTime();
+        long startTime = System.currentTimeMillis();
 
         p.solve();
 
-        long endTime = System.nanoTime();
+        long endTime = System.currentTimeMillis();
 
         p.displayResult();
 
-        System.out.println("Execution Time: " + (endTime - startTime) + " nano seconds\n");
+        System.out.println("Execution Time: " + (endTime - startTime) + " ms\n");
     }
 }
 

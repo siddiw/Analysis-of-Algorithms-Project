@@ -2,24 +2,22 @@ import java.util.Vector;
 
 public class Task6 extends Problem2 {
 
-    static int task3b(Vector<Integer> v) {
-
+    static int task3b(Vector<Integer> subproblem) {
         int currSum = 0;
-        int maxSum = Integer.MIN_VALUE;
+        int maxSumSoFar = Integer.MIN_VALUE;
 
-        for (int i = 0; i < (int) v.size(); i++) {
-            currSum += v.get(i);
+        for (int i = 0; i < (int) subproblem.size(); i++) {
+            currSum += subproblem.get(i);
 
-            if (currSum > maxSum) {
-                maxSum = currSum;
+            if (currSum > maxSumSoFar) {
+                maxSumSoFar = currSum;
             }
 
             if (currSum < 0) {
                 currSum = 0;
             }
         }
-
-        return maxSum;
+        return maxSumSoFar;
     }
 
     public void solve() {
@@ -62,10 +60,17 @@ public class Task6 extends Problem2 {
                 }
                 // kadane - Task 3b
                 maxSum = Math.max(maxSum, task3b(v));
+
+                // int temp = task3b(v);
+
+                // if (maxSum < temp){
+                //     maxSum = temp;
+                //     x1 = 
+                // }
             }
         }
 
         sum = maxSum;
-        System.out.print(maxSum + "\n");
+        //System.out.print(maxSum + "\n");
     }
 }

@@ -2,21 +2,27 @@ import java.util.Vector;
 
 public class Task6 extends Problem2 {
 
+    static int ll, rr, tt, bb;
+
     static int task3b(Vector<Integer> subproblem) {
-        int currSum = 0;
+        int currSum = 0, currStart = 0;
         int maxSumSoFar = Integer.MIN_VALUE;
 
-        for (int i = 0; i < (int) subproblem.size(); i++) {
-            currSum += subproblem.get(i);
+        for (int currPtr = 0; currPtr < (int) subproblem.size(); currPtr++) {
+            currSum += subproblem.get(currPtr);
 
-            if (currSum > maxSumSoFar) {
+            if (maxSumSoFar < currSum) {
                 maxSumSoFar = currSum;
+                ll = currStart;
+                rr = currPtr;
             }
 
             if (currSum < 0) {
                 currSum = 0;
+                currStart = currPtr + 1;
             }
         }
+
         return maxSumSoFar;
     }
 
@@ -32,9 +38,7 @@ public class Task6 extends Problem2 {
         }
 
         for (int i = 0; i < msize; i++) {
-
             for (int j = 0; j < nsize; j++) {
-
                 if (j == 0)
                     prefix[i][j] = matAQI[i][j];
                 else
@@ -53,24 +57,25 @@ public class Task6 extends Problem2 {
                     if (i == 0)
                         el = prefix[k][j];
                     else
-                        el = prefix[k][j]
-                                - prefix[k][i - 1];
-
+                        el = prefix[k][j] - prefix[k][i - 1];
                     v.add(el);
                 }
                 // kadane - Task 3b
-                maxSum = Math.max(maxSum, task3b(v));
 
-                // int temp = task3b(v);
+                int temp = task3b(v);
 
-                // if (maxSum < temp){
-                //     maxSum = temp;
-                //     x1 = 
-                // }
+                if (maxSum < temp) {
+                    maxSum = temp;
+                    tt = i;
+                    bb = j;
+                    x1 = ll;
+                    x2 = rr;
+                }
             }
         }
 
+        y1 = tt;
+        y2 = bb;
         sum = maxSum;
-        //System.out.print(maxSum + "\n");
     }
 }

@@ -11,7 +11,7 @@ JC = javac
 
 CLASSES = *.java
 
-default: clean classes
+default: clean classes jar
 
 classes: $(CLASSES:.java=.class)
 

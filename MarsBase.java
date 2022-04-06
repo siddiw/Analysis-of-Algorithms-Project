@@ -18,6 +18,7 @@ public class MarsBase {
         String task = args[0];
 
         Problem p = null;
+        //selecting appropriate tasks on the basis of the command line input
         switch (task) {
             case task1:
                 p = new Task1();
@@ -41,18 +42,21 @@ public class MarsBase {
                 p = new Task6();
                 break;
             default:
-                System.out.println("Tata.. Bye Bye..Khatam..!!");
+                System.out.println("Wrong Command Line Argument!!");
                 System.exit(-1);
         }
 
+        //reading input from the standara input
         p.getInput();
-
+        //mark start
         long startTime = System.currentTimeMillis();
 
+        //applying the algo on the input
         p.solve();
 
         long endTime = System.currentTimeMillis();
-
+        //mark end
+        //displaying the result t
         p.displayResult();
 
         System.out.println("Execution Time: " + (endTime - startTime) + " ms\n");

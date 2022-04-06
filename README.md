@@ -12,7 +12,7 @@ Given a two dimensional array M of size m×n consisting of integers (positive or
 find a rectangle (two dimensional sub-array) whose sum is maximum.
 
 ## Build Commands
-make && make jar
+make
 
 ## Run Commands
 Example: java -jar MarsBase.jar 4 < input2.txt

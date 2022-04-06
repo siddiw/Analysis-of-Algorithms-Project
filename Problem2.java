@@ -7,7 +7,9 @@ public abstract class Problem2 implements Problem {
     Scanner scanner = new Scanner(System.in);
 
     public void getInput() {
+        //row size of matrix
         msize = scanner.nextInt();
+        //column size of matrix
         nsize = scanner.nextInt();
         matAQI = new int[msize][nsize];
         int rowcount = 0;

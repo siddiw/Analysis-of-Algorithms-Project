@@ -33,7 +33,7 @@ class Task4 extends Problem2 {
                 }
             }
         }
-
+        //setting the result
         sum = maxSumSoFar;
     }
 }

@@ -7,16 +7,19 @@ public class Task6 extends Problem2 {
     static int task3b(Vector<Integer> subproblem) {
         int currSum = 0, currStart = 0;
         int maxSumSoFar = Integer.MIN_VALUE;
-
+        
         for (int currPtr = 0; currPtr < (int) subproblem.size(); currPtr++) {
             currSum += subproblem.get(currPtr);
-
+            // Add current element to subarray sum
             if (maxSumSoFar < currSum) {
+                //replace maximum
                 maxSumSoFar = currSum;
+                //updating coordinates
                 ll = currStart;
                 rr = currPtr;
             }
 
+            //if sum falls below 0 then re-initialize it to zero
             if (currSum < 0) {
                 currSum = 0;
                 currStart = currPtr + 1;
@@ -29,6 +32,7 @@ public class Task6 extends Problem2 {
     public void solve() {
         int[][] prefix = new int[msize][];
 
+        
         for (int i = 0; i < msize; i++) {
 
             prefix[i] = new int[nsize];
@@ -37,6 +41,7 @@ public class Task6 extends Problem2 {
             }
         }
 
+        //calculating the prefix sum for every row
         for (int i = 0; i < msize; i++) {
             for (int j = 0; j < nsize; j++) {
                 if (j == 0)
@@ -63,7 +68,8 @@ public class Task6 extends Problem2 {
                 // kadane - Task 3b
 
                 int temp = task3b(v);
-
+                
+                // update the overall sum and coordinates
                 if (maxSum < temp) {
                     maxSum = temp;
                     tt = i;
@@ -76,6 +82,8 @@ public class Task6 extends Problem2 {
 
         y1 = tt;
         y2 = bb;
+
+        //setting the result
         sum = maxSum;
     }
 }

@@ -3,6 +3,7 @@ public class Task5 extends Problem2 {
 
         int[][] sub = new int[msize + 1][nsize + 1];
 
+        //maintaining prefix matrix
         for (int r1 = 0; r1 <= msize; r1++) {
             for (int r2 = 0; r2 <= nsize; r2++) {
                 if (r1 == 0 || r2 == 0) {
@@ -16,6 +17,7 @@ public class Task5 extends Problem2 {
 
         int maxSum = Integer.MIN_VALUE;
 
+        //iterating through every prefix combination
         for (int r1 = 0; r1 < msize; r1++) {
             for (int r2 = r1; r2 < msize; r2++) {
                 for (int c1 = 0; c1 < nsize; c1++) {
@@ -35,6 +37,7 @@ public class Task5 extends Problem2 {
             }
         }
 
+        //setting the result
         sum = maxSum;
     }
 }

@@ -1,5 +1,5 @@
 # Analysis-of-Algorithms-Project
-COT 5405 Analysis of Algorithms Project
+This project was completed for the course - COT 5405 Analysis of Algorithms. The task was to start with a brute force approach to solve the two problems (mentioned below) and then optimize the solutions to have better time and space complexities. The AOA_Report.pdf summarizes our algorithms and their analysis.
 
 
 ## Problem1 
